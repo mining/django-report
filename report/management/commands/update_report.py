@@ -60,14 +60,14 @@ class Command(BaseCommand):
         db_engine = db['ENGINE'].split(".")[-1]
         db['ENGINE'] = db_engine
 
-        if db.get('PASSWORD', None):
+        if db.get('PASSWORD'):
             db["PASSWORD"] = ":{0}".format(db.get('PASSWORD'))
 
         if db_engine == "postgresql_psycopg2":
             db['ENGINE'] = "postgresql"
-            db['PORT'] = db.get('PORT', None) or 5432
+            db['PORT'] = db.get('PORT') or 5432
         elif db_engine == "mysql":
-            db['PORT'] = db.get('PORT', None) or 3306
+            db['PORT'] = db.get('PORT') or 3306
         elif db_engine == "sqlite3":
             db['ENGINE'] = "sqlite"
 

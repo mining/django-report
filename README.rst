@@ -82,7 +82,7 @@ it applies to, though that is not required.::
     
         def get_queryset(self):
             """Used when the entire index for model is updated."""
-            return self.model.objects.all
+            return self.model.objects.all()
 
 
 Build

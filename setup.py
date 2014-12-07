@@ -27,5 +27,5 @@ setup(
         'Programming Language :: Python :: 3',
         'Topic :: Utilities'],
     zip_safe=False,
-    install_requires=['Django'],
+    install_requires=['Django', 'requests'],
 )

@@ -41,7 +41,7 @@ Example::
         'report',
 
         # Then your usual apps...
-        'blog',
+        'myapp.note',
     ]
 
 
@@ -72,17 +72,17 @@ placed in the handles the flow of data in.
 This code generally goes in a ``reports.py`` file within the app
 it applies to, though that is not required.::
 
-# -*- coding: utf-8 -*-
-from report.backends.mining import Mining
-from myapp.models import Note
-
-
-class AfiliadoMining(Mining):
-    model = Note
-
-    def get_queryset(self):
-    """Used when the entire index for model is updated."""
-    ¦   return self.model.objects.all
+    # -*- coding: utf-8 -*-
+    from report.backends.mining import Mining
+    from myapp.models import Note
+    
+    
+    class NoteMining(Mining):
+        model = Note
+    
+        def get_queryset(self):
+            """Used when the entire index for model is updated."""
+            return self.model.objects.all
 
 
 Build

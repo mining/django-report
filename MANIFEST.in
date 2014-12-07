@@ -1,0 +1,3 @@
+include README.rst
+include CONTRIBUTING.rst
+recursive-include report *.html *.css *.js *.png *.gif *.woff *.ttf *.svg *.eot *.txt
